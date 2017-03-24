@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+
 angular
   .module('proAngularApp', [
     'ngAnimate',
@@ -22,9 +23,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/nations.html',
+        controller: 'NationListCtrl',
+ //       controllerAs: 'nationlist'
       })
       .when('/about', {
         templateUrl: 'views/about.html',

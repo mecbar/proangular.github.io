@@ -1,1 +1,26 @@
-<p>This is the nations view.</p>
+<table ng-app="proAngularApp" >
+    <tr>
+      <th>number </th>  
+      <th>nation name </th>
+      <th>nation code </th>
+    </tr> 
+    <tbody ng-controller="NationListCtrl" ng-repeat="nation in nations">
+        <tr   ng-repeat="(key,value) in nation">
+        <td>  {{ key }} </td> 
+        <td> {{ value.name }} </td>
+        <td> {{ value.code }} </td>
+      </tr>
+     </div>
+    </tbody>  
+ 
+<!--
+ <div ng-app="proAngularApp">
+  <div ng-controller="NationListCtrl">
+   <div ng-repeat="nation in nations">  
+      <div ng-repeat="(key,value) in nation">
+         {{ value.name }} 
+          {{ value.code}}
+-->
+
+
+</table>

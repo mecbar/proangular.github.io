@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name proAngularApp.controller:NationlistCtrl
@@ -7,11 +5,20 @@
  * # NationlistCtrl
  * Controller of the proAngularApp
  */
-angular.module('proAngularApp')
-  .controller('NationlistCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+var myapp = angular.module('proAngularApp');
+(function(app){
+  "use strict";
+
+  myapp.controller('NationListCtrl', function ($scope,$http) {
+    $http({
+      method: 'GET',
+      url : '/data/nations.json'
+    }).then(function (data) {
+          $scope.nations = data ;
+       }, function (data) {
+         console.log('Error');
+       });
+  });  
+  
+     
+  })();
